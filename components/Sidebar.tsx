@@ -5,9 +5,10 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Footer from './Footer';
 
 const Sidebar = ({ user }: SiderbarProps) => {
-  const pathname = usePathname();
+  const pathname = usePathname();  
 
   return (
     <section className='sidebar'>
@@ -17,10 +18,10 @@ const Sidebar = ({ user }: SiderbarProps) => {
             src='/icons/logo.svg'
             width={34}
             height={34}
-            alt='Horizon logo'
+            alt='Quantumpulse logo'
             className='size-[24px] max-xl:size-14'
           />
-          <h1 className='sidebar-logo'>Horizon</h1>
+          <h1 className='sidebar-logo'>Quantumpulse</h1>
         </Link>
 
         {sidebarLinks.map((item) => {
@@ -50,7 +51,7 @@ const Sidebar = ({ user }: SiderbarProps) => {
         })}
         user
       </nav>
-      footer
+      <Footer user={user} />
     </section>
   );
 };
